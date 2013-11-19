@@ -1,0 +1,66 @@
+<xml>
+    <toolbar>
+        <button id="newuser" text="Add user" iconfont="gen-user-plus" />
+    </toolbar>
+    
+    <pad id="main">
+        <tabcontrol id="tabs" active="0">
+            <tabheader text="User" id="0"/>
+            <tabheader text="General" id="1"/>
+           
+            <tabbody id="0">
+                <dt id="users" width="100%">
+                    <dtr header="True">
+                        <dth width="1" />
+                        <dth>
+                            <label text="Name" />
+                        </dth>
+                        <dth width="1" />
+                    </dtr>
+                </dt>
+            </tabbody>
+            
+            <tabbody id="1">
+  		 <container id="cfg_gen">
+                  <formbox id='frmChangeGeneralCfg' hidecancel="True" hideok='False'>
+			<formline text="Gateway server">
+				<textinput id='gateway' name='gateway' value='str' password='false' />
+			</formline>
+			<formline>
+				<label size='2' bold='true' text='Gateway server for routing internet connection.' />
+			</formline>
+			<formline text="Local ip address">
+				<textinput id='localip' name='localip' value='str' password='false' />
+			</formline>
+			<formline>
+				<label size='2' bold='true' text='The ip adress listening for vpn connections.' />
+			</formline>
+			<formline text="DHCP range">
+				<textinput id='ipfrom' name='ipfrom' value='str' password='false' /><textinput id='ipto' name='ipto' value='str' password='false' />
+			</formline>
+			<formline>
+				<label size='2' bold='true' text='The ip range for dhcp used by the vpn-client.' />
+			</formline>
+                   </formbox>
+		 </container>
+               <container id="tab2" />
+            </tabbody>
+            
+        </tabcontrol>
+    </pad>
+	
+    <dialogbox id="dlgAddNewUser" hidecancel="False">
+        <formline text="Login">
+            <textinput name="login" id="login" value=""/>
+        </formline>
+        <formline text="Password">
+            <textinput name="password" password='true' id="passwd" value="" />
+        </formline>
+    </dialogbox>
+
+    <dialogbox id="dlgSetPsw" hidecancel="False">
+        <formline text="New password">
+            <textinput name="password" password='true' id="passwd" value="" />
+        </formline>
+    </dialogbox>
+</xml>
